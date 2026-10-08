@@ -1,12 +1,138 @@
 /* CSS by Baha */
-/* Color Palette 
-deep black= #05080D
-slate blue= #65768C
-steel blue= #263640
-burnt orange= #BF5B04
-earth=#733917
+
+/* Color Palette
+navy = #1F2A44
+blue = #3D5A80
+light blue = #EAF2F8
+cream = #F8F7F4
+white = #FFFFFF
+charcoal = #222831
 */
+
 /* Global (base) MOBILE STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #65768C;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F8F7F4;
+    color: #222831;
+
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #1F2A44;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-top: 0.5rem;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #3D5A80;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background-color: #EAF2F8;
+    color: #1F2A44;
+}
+
+main {
+    grid-area: main;
+    background-color: #FFFFFF;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #1F2A44;
+}
+
+h3 {
+    color: #3D5A80;
+}
+
+main a {
+    color: #3D5A80;
+    font-weight: bold;
+}
+
+.project-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.project-card {
+    background-color: #EAF2F8;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #1F2A44;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* LARGER SCREEN STYLES */
+
+@media (min-width: 800px) {
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 1rem 2rem;
+    }
+
+    main {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

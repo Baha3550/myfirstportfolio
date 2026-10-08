@@ -17,6 +17,7 @@ charcoal = #222831
 
 body {
     margin: 0;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     background-color: #F8F7F4;
     color: #222831;
@@ -27,7 +28,10 @@ body {
         "nav"
         "main"
         "footer";
+    grid-template-rows: auto auto 1fr auto;
 }
+
+/* Header */
 
 header {
     grid-area: header;
@@ -37,6 +41,13 @@ header {
     padding: 2rem 1rem;
 }
 
+.portfolio-logo {
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
 header h1 {
     margin: 0;
 }
@@ -44,6 +55,8 @@ header h1 {
 header p {
     margin-top: 0.5rem;
 }
+
+/* Navigation */
 
 nav {
     grid-area: nav;
@@ -58,6 +71,10 @@ nav ul {
     padding: 0;
 }
 
+nav li {
+    margin: 0;
+}
+
 nav a {
     display: block;
     color: #FFFFFF;
@@ -70,6 +87,8 @@ nav a:hover {
     background-color: #EAF2F8;
     color: #1F2A44;
 }
+
+/* Main Content */
 
 main {
     grid-area: main;
@@ -89,14 +108,22 @@ h3 {
     color: #3D5A80;
 }
 
+p {
+    line-height: 1.6;
+}
+
 main a {
     color: #3D5A80;
     font-weight: bold;
 }
 
+/* Project Section */
+
 .project-grid {
     display: grid;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .project-card {
@@ -104,6 +131,42 @@ main a {
     padding: 1.5rem;
     border-radius: 10px;
 }
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    margin-top: 0.5rem;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #3D5A80;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.project-card a:hover {
+    background-color: #1F2A44;
+    color: #FFFFFF;
+}
+
+/* Lists */
+
+main ul {
+    line-height: 1.8;
+}
+
+/* Footer */
 
 footer {
     grid-area: footer;
@@ -134,5 +197,9 @@ footer {
 
     .project-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio-logo {
+        width: 180px;
     }
 }

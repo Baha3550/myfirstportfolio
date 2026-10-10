@@ -1,16 +1,3 @@
-/* CSS by Baha */
-
-/* Color Palette
-navy = #1F2A44
-blue = #3D5A80
-light blue = #EAF2F8
-cream = #F8F7F4
-white = #FFFFFF
-charcoal = #222831
-*/
-
-/* Global (base) MOBILE STYLES */
-
 * {
     box-sizing: border-box;
 }
@@ -30,8 +17,6 @@ body {
         "footer";
     grid-template-rows: auto auto 1fr auto;
 }
-
-/* Header */
 
 header {
     grid-area: header;
@@ -55,8 +40,6 @@ header h1 {
 header p {
     margin-top: 0.5rem;
 }
-
-/* Navigation */
 
 nav {
     grid-area: nav;
@@ -88,8 +71,6 @@ nav a:hover {
     color: #1F2A44;
 }
 
-/* Main Content */
-
 main {
     grid-area: main;
     background-color: #FFFFFF;
@@ -117,8 +98,6 @@ main a {
     font-weight: bold;
 }
 
-/* Project Section */
-
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -145,28 +124,62 @@ main a {
     margin-top: 0.5rem;
 }
 
-.project-card a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1rem;
-    background-color: #3D5A80;
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 6px;
+.image-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: zoom-in;
 }
 
-.project-card a:hover {
+.image-button:focus-visible {
+    outline: 3px solid #3D5A80;
+    outline-offset: 3px;
+}
+
+#image-preview {
+    width: 95%;
+    max-width: 1000px;
+    max-height: 90vh;
+    padding: 3rem 1rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+#image-preview::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#preview-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+#close-preview {
+    position: absolute;
+    top: 10px;
+    right: 15px;
     background-color: #1F2A44;
     color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-/* Lists */
+#close-preview:hover {
+    background-color: #3D5A80;
+}
 
 main ul {
     line-height: 1.8;
 }
-
-/* Footer */
 
 footer {
     grid-area: footer;
@@ -175,8 +188,6 @@ footer {
     text-align: center;
     padding: 1rem;
 }
-
-/* LARGER SCREEN STYLES */
 
 @media (min-width: 800px) {
 
